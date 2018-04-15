@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <style>
+        @-webkit-keyframes blinker {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+
+        }
+
+        .waitingForConnection {
+            -webkit-animation-name: blinker;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+            -webkit-animation-duration: 1s;
+        }
+
+        .side-button{
+            margin: auto;
+            position: absolute;
+            margin: auto;
+            bottom: 20px;
+            width: 100%;
+            /*position: absolute;*/
+        }
+        .side-button img {
+            margin: auto;
+            display: block;
+            width: 2rem;
+        }
+        .title{
+            margin: auto;
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            padding-left: 1rem;
+            top: 50%;
+            transform: translateY(-60%);
+        }
+        .title .title-img{
+
+            min-width: 435px;
+            width: 60%; ;
+            /*max-width: 80%;*/
+        }
+        .title img+img{
+            width:35%;
+            max-width: 20rem;
+            display: block;
+            margin-left: 5rem;
+        }
+
+        .install {
+            margin: auto;
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .install img{
+            margin: auto;
+            display: block;
+            width: 80%;
+
+        }
+        .report {
+            margin: auto;
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .report img{
+            margin: auto;
+            display: block;
+            width: 40%;
+
+        }
+        .trailer{
+            margin: auto;
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .trailer img{
+            margin: auto;
+            display: block;
+            width: 40%;
+        }
+        .how_to{
+            margin: auto;
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            top: 50%;
+            text-align: center ;
+            transform: translateY(-50%);
+        }
+        .how_to iframe{
+            margin: auto;
+            display: block;
+        }
+        .page{
+            position: relative;
+        }
+        #p2{
+
+        }
+
+        #p4{
+            background-color: whitesmoke;
+        }
+
+        body{
+            background-color: whitesmoke;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="p1" class="page"
+     style="background-image: url('p1.jpg');width: 100%;height: 100%;"
+     alt="">
+    <div class="title"><img class="title-img" src="./title.png" alt=""><img class="waitingForConnection" src="./download.png" alt=""></div>
+    <div id="p1_button" class="side-button">
+        <img src="./button_white.png" alt="">
+
+    </div>
+
+</div>
+<div id="p2" class="page">
+    <div class="install">
+        <img src="./install.png" alt="">
+    </div>
+    <div id="p2_button" class="side-button" >
+        <img  src="./button_black.png" alt="">
+    </div>
+</div>
+<div  class="page">
+    <div class=" trailer ">
+        <img src="./trailer.png" alt="">
+    </div>
+    <div  class="side-button" >
+        <img src="./button_black.png" alt="">
+    </div>
+</div>
+<div  class="page" id="p4">
+    <div class="how_to">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tMeFibS9hlY?rel=0&amp;controls=0&amp;showinfo=0&loop=1;" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    </div>
+    <div  class="side-button" >
+        <img src="./button_black.png" alt="">
+    </div>
+</div>
+<div  class="page">
+    <div class=" report waitingForConnection">
+        <img src="./report.png" alt="">
+    </div>
+    <!--<div  class="side-button" >-->
+        <!--<img src="./button_white.png" alt="">-->
+    <!--</div>-->
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+<script src="//api.html5media.info/1.2.2/html5media.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var w = document.documentElement.clientWidth;//可见区域宽度
+        var h = document.documentElement.clientHeight;//可见区域高度
+        // console.log(w, h);
+        // var p1 = document.getElementById('p1');
+        // p1.style.width = w-15 + "px";
+        // p1.style.height = h + "px";
+        // var p2 = document.getElementById('p2');
+        // p2.style.width = w-15 + "px";
+        // p2.style.height = h + "px";
+
+        $('.page').css('width', (w-15)+'px');
+        $('.page').css('height', h+'px');
+
+        // var
+    });
+</script>
+</body>
+</html>
