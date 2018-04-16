@@ -23,6 +23,19 @@
 
         }
 
+        @-webkit-keyframes shake {
+            0% {transform: translate(0px, 0rem) }
+            50% {transform: translate(0px, -1rem) }
+            100% {transform: translate(0px, 0rem) }
+        }
+
+        .shake{
+            -webkit-animation-name: shake;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+            -webkit-animation-duration: 1s;
+        }
+
         .waitingForConnection {
             -webkit-animation-name: blinker;
             -webkit-animation-iteration-count: infinite;
@@ -110,10 +123,20 @@
             transform: translateY(-50%);
         }
 
-        .trailer img {
+        .trailer-title{
+            margin: 1rem;
+            display: block;
+            width: 10rem;
+        }
+        .how-to-title {
+            margin: 1rem;
+            display: block;
+            width: 20rem;
+        }
+
+        .trailer iframe {
             margin: auto;
             display: block;
-            width: 40%;
         }
 
         .how_to {
@@ -157,7 +180,7 @@
      alt="">
     <div class="title"><img class="title-img" src="./title.png" alt=""><img class="waitingForConnection"
                                                                             src="./download.png" alt=""></div>
-    <div id="p1_button" class="side-button">
+    <div id="p1_button" class="side-button shake">
         <img src="./button_white.png" alt="">
 
     </div>
@@ -167,25 +190,32 @@
     <div class="install">
         <img src="./install2.png" alt="">
     </div>
-    <div id="p2_button" class="side-button">
+    <div id="p2_button" class="side-button shake">
         <img src="./button_smoke.png" alt="">
     </div>
 </div>
 <div class="page">
-    <div class=" trailer ">
-        <img src="./trailer2.png" alt="">
+
+    <img class="trailer-title" src="./trailer2.png" alt="">
+
+    <div class="trailer ">
+        <iframe width="90%" height="320rem"
+                src="https://www.youtube.com/embed/hjg8DBkkjD4?rel=0&amp;controls=0&amp;showinfo=0&loop=1;"
+                frameborder="0" allow="autoplay; encrypted-media"></iframe>
     </div>
-    <div class="side-button">
+
+    <div class="side-button shake">
         <img src="./button_smoke.png" alt="">
     </div>
 </div>
 <div class="page" id="p4">
+    <img src="./how_to.png" class="how-to-title" alt="">
     <div class="how_to">
         <iframe width="90%" height="320rem"
                 src="https://www.youtube.com/embed/tMeFibS9hlY?rel=0&amp;controls=0&amp;showinfo=0&loop=1;"
                 frameborder="0" allow="autoplay; encrypted-media"></iframe>
     </div>
-    <div class="side-button">
+    <div class="side-button shake">
         <img src="./button_smoke.png" alt="">
     </div>
 </div>
@@ -193,7 +223,7 @@
     <div class=" report waitingForConnection">
         <img src="./report2.png" alt="">
     </div>
-    <!--<div  class="side-button" >-->
+    <!--<div  class="side-button shake" >-->
     <!--<img src="./button_white.png" alt="">-->
     <!--</div>-->
 </div>
