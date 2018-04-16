@@ -7,7 +7,8 @@
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link href="https://cdn.bootcss.com/pace/1.0.2/themes/white/pace-theme-flash.min.css" rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport"
+          content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
     <style>
         @-webkit-keyframes blinker {
@@ -24,12 +25,18 @@
         }
 
         @-webkit-keyframes shake {
-            0% {transform: translate(0px, 0rem) }
-            50% {transform: translate(0px, -1rem) }
-            100% {transform: translate(0px, 0rem) }
+            0% {
+                transform: translate(0px, 0rem)
+            }
+            50% {
+                transform: translate(0px, -1rem)
+            }
+            100% {
+                transform: translate(0px, 0rem)
+            }
         }
 
-        .shake{
+        .shake {
             -webkit-animation-name: shake;
             -webkit-animation-iteration-count: infinite;
             -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
@@ -75,7 +82,7 @@
             /*max-width: 80%;*/
         }
 
-        .title img + img {
+        .title img + a img {
             width: 35%;
             max-width: 20rem;
             display: block;
@@ -123,11 +130,12 @@
             transform: translateY(-50%);
         }
 
-        .trailer-title{
+        .trailer-title {
             margin: 1rem;
             display: block;
             width: 10rem;
         }
+
         .how-to-title {
             margin: 1rem;
             display: block;
@@ -171,6 +179,12 @@
 
         }
 
+        .qr {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+        }
+
     </style>
 </head>
 <body>
@@ -178,13 +192,17 @@
 <div id="p1" class="page"
      style="background-image: url('p1.jpg');width: 100%;background-repeat: no-repeat;background-size: cover "
      alt="">
-    <div class="title"><img class="title-img" src="./title.png" alt=""><img class="waitingForConnection"
-                                                                            src="./download.png" alt=""></div>
+    <div class="title"><img class="title-img" src="./title.png" alt="">
+        <a href="http://hk.unclenoway.com/android.apk"><img class="waitingForConnection"
+                                                            src="./download.png" alt=""></div>
+    </a>
     <div id="p1_button" class="side-button shake">
         <a href="#"><img src="./button_white.png" alt=""></a>
 
     </div>
-
+    <div class="qr">
+        <img src="./qr.png" alt="">
+    </div>
 </div>
 <div id="p2" class="page">
     <div class="install">
@@ -193,6 +211,7 @@
     <div id="p2_button" class="side-button shake">
         <a href="#"><img src="./button_smoke.png" alt=""></a>
     </div>
+
 </div>
 <div class="page">
 
@@ -228,7 +247,7 @@
     <!--</div>-->
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-        ></script>
+></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
@@ -253,8 +272,8 @@
         $('.page').css('width', (w - 15) + 'px');
         $('.page').css('height', h + 'px');
 
-       $('.side-button').click(function(){
-           $("html,body").animate({"scrollTop":$(document).scrollTop()-$(document).scrollTop()%h+h})
+        $('.side-button').click(function () {
+            $("html,body").animate({"scrollTop": $(document).scrollTop() - $(document).scrollTop() % h + h})
         });
     });
 </script>
