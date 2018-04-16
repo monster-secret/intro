@@ -181,7 +181,7 @@
     <div class="title"><img class="title-img" src="./title.png" alt=""><img class="waitingForConnection"
                                                                             src="./download.png" alt=""></div>
     <div id="p1_button" class="side-button shake">
-        <img src="./button_white.png" alt="">
+        <a href="#"><img src="./button_white.png" alt=""></a>
 
     </div>
 
@@ -191,7 +191,7 @@
         <img src="./install2.png" alt="">
     </div>
     <div id="p2_button" class="side-button shake">
-        <img src="./button_smoke.png" alt="">
+        <a href="#"><img src="./button_smoke.png" alt=""></a>
     </div>
 </div>
 <div class="page">
@@ -205,7 +205,7 @@
     </div>
 
     <div class="side-button shake">
-        <img src="./button_smoke.png" alt="">
+        <a href="#"><img src="./button_smoke.png" alt=""></a>
     </div>
 </div>
 <div class="page" id="p4">
@@ -216,20 +216,19 @@
                 frameborder="0" allow="autoplay; encrypted-media"></iframe>
     </div>
     <div class="side-button shake">
-        <img src="./button_smoke.png" alt="">
+        <a href="#"><img src="./button_smoke.png" alt=""></a>
     </div>
 </div>
 <div class="page">
     <div class=" report waitingForConnection">
-        <img src="./report2.png" alt="">
+        <a href="./Game%20Report.pdf"><img src="./report2.png" alt=""></a>
     </div>
     <!--<div  class="side-button shake" >-->
     <!--<img src="./button_white.png" alt="">-->
     <!--</div>-->
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
@@ -254,7 +253,9 @@
         $('.page').css('width', (w - 15) + 'px');
         $('.page').css('height', h + 'px');
 
-        // var
+       $('.side-button').click(function(){
+           $("html,body").animate({"scrollTop":$(document).scrollTop()-$(document).scrollTop()%h+h})
+        });
     });
 </script>
 </body>
